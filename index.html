@@ -16,7 +16,7 @@
           <h3>HDG Group, LLC</h3>
           <h5>Real Estate Investments | Management | Advisory</h5>
           <br>
-          <a href="">
+          <a href="https://goo.gl/maps/r7LbWf7fUEp">
             <p>10 West 33rd Street</p>
             <p>New York, NY</p>
             <p>10001</p>
@@ -27,6 +27,33 @@
       </div>
     </div>
   </div>
+  <script>
+    (function() {
+      var $outer = document.querySelector('.outer');
+      var $content = document.querySelector('.content');
+
+      function parallax (e) {
+         var amountMovedX = (e.pageX * -0.3 / 6);
+         var amountMovedY = (e.pageY * -0.3 / 6);
+         this.style.backgroundPosition = amountMovedX + 'px ' + amountMovedY + 'px ';
+      }
+
+      function grey (e) {
+        $outer.classList.add('black-and-white');
+        $outer.removeEventListener('mousemove', parallax);
+      }
+
+      function color (e) {
+        $outer.classList.remove('black-and-white');
+        $outer.addEventListener('mousemove', parallax);
+      }
+
+      $content.addEventListener('mouseenter', grey);
+      $content.addEventListener('mouseleave', color);
+      $outer.addEventListener('mousemove', parallax);
+
+    })();
+  </script>
 </body>
 
 </html>
