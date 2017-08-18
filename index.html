@@ -2,28 +2,29 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>HDG Group, LLC</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel='stylesheet' href='styles.css'>
 </head>
 
 <body>
-  <div class="outer">
-    <div class="middle">
-      <div class="inner">
-        <div class="content">
+  <div class='outer'>
+    <div class='middle'>
+      <div class='inner'>
+        <div class='content'>
           <h3>HDG Group, LLC</h3>
           <h5>Real Estate Investments | Management | Advisory</h5>
           <br>
-          <a href="https://goo.gl/maps/r7LbWf7fUEp">
-            <p>10 West 33rd Street</p>
-            <p>New York, NY</p>
-            <p>10001</p>
+          <a href='https://goo.gl/maps/r7LbWf7fUEp' class='address'>
+            <p class='address'>10 West 33rd Street</p>
+            <p class='address'>New York, NY</p>
+            <p class='address'>10001</p>
           </a>
           <br>
-          <a href="mailto:sol@HDGAcquisitions.com">Sol@HDGAcquisitions.com</a>
+          <a href='mailto:sol@HDGAcquisitions.com' class='email'>Sol@HDGAcquisitions.com</a>
         </div>
       </div>
     </div>
@@ -39,18 +40,18 @@
          this.style.backgroundPosition = amountMovedX + 'px ' + amountMovedY + 'px ';
       }
 
-      function grey (e) {
+      function enter (e) {
         $outer.classList.add('black-and-white');
         $outer.removeEventListener('mousemove', parallax);
       }
 
-      function color (e) {
+      function exit (e) {
         $outer.classList.remove('black-and-white');
         $outer.addEventListener('mousemove', parallax);
       }
 
-      $content.addEventListener('mouseenter', grey);
-      $content.addEventListener('mouseleave', color);
+      $content.addEventListener('mouseenter', enter);
+      $content.addEventListener('mouseleave', exit);
       $outer.addEventListener('mousemove', parallax);
 
     })();
